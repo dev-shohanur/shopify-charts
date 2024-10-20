@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "93d65eda79a354ee006b11ebb0dfbe1e"
+name = "charts"
+handle = "charts-6"
+application_url = "https://volume-rochester-tribunal-sell.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "murad-wahid.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_all_orders,read_customers,read_fulfillments,read_inventory,read_orders,read_products,read_reports,write_products"
+
+[auth]
+redirect_urls = [
+  "https://volume-rochester-tribunal-sell.trycloudflare.com/auth/callback",
+  "https://volume-rochester-tribunal-sell.trycloudflare.com/auth/shopify/callback",
+  "https://volume-rochester-tribunal-sell.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-04"
+
+[pos]
+embedded = false

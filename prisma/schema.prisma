@@ -1,0 +1,122 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Note that some adapters may set a maximum length for the String type by default, please ensure your strings are long
+// enough when changing adapters.
+// See https://www.prisma.io/docs/orm/reference/prisma-schema-reference#string for more information
+datasource db {
+  provider = "sqlite"
+  url      = "file:dev.sqlite"
+}
+
+model Session {
+  id          String    @id
+  shop        String
+  state       String
+  isOnline    Boolean   @default(false)
+  scope       String?
+  expires     DateTime?
+  accessToken String
+  userId      BigInt?
+}
+
+model AnalyticsData {
+  id   String @id
+  data String
+}
+
+model LineChartsOne {
+  id    String @id
+  shop  String
+  month String
+  value String
+}
+
+model LineChartsTwo {
+  id       String @id
+  shop     String
+  month    String
+  actual   String
+  expected String
+}
+
+model LineChartsThree {
+  id    String @id
+  shop  String
+  time  String
+  value String
+}
+
+model LineChartsFour {
+  id       String @id
+  shop     String
+  month    String
+  actual   String
+  expected String
+}
+
+model BarChartOne {
+  id    String @id
+  shop  String
+  month String
+  value String
+}
+
+model BarChartTwo {
+  id       String @id
+  shop     String
+  month    String
+  actual   String
+  expected String
+}
+
+model BarChartThree {
+  id    String @id
+  shop  String
+  time  String
+  value String
+}
+
+model BarChartFour {
+  id       String @id
+  shop     String
+  month    String
+  actual   String
+  expected String
+}
+
+model DoughnutPieChartOne {
+  id    String @id
+  shop  String
+  label String
+  value String
+}
+
+model DoughnutPieChartTwo {
+  id    String @id
+  shop  String
+  label String
+  value String
+}
+
+model DoughnutPieChartThere {
+  id              String @id
+  shop            String
+  label           String
+  value           String
+  backgroundColor String
+}
+
+model DoughnutPieChartFour {
+  id              String @id
+  shop            String
+  label           String
+  backgroundColor String
+  value1          String
+  value2          String
+  value3          String
+}
